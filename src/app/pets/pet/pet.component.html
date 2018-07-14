@@ -1,0 +1,24 @@
+<form #petForm="ngForm" (ngSubmit)="onSubmit(petForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="petService.selectedPet.$key">
+<div class="form-group">
+  <label>Nome</label>
+  <input class="form-control" name="nome" #name="ngModel" [(ngModel)]="petService.selectedPet.nome" placeholder="nome" required>
+</div>
+<div class="form-group">
+  <label>Raça</label>
+  <input class="form-control" name="raca" #position="ngModel" [(ngModel)]="petService.selectedPet.raca" placeholder="raca" required>
+</div>
+<div class="form-group">
+  <label>Email do Usuário</label>
+  <input class="form-control" name="emailUser" #office="ngModel" [(ngModel)]="petService.selectedPet.emailUser" placeholder="Email do dono">
+</div>
+
+<div class="form-group text-center">
+  <button class="btn btn-primary" type="submit" [disabled]="!petForm.valid">
+    <i class="fa fa-floppy-o"></i>
+     Salvar</button>
+  <button class="btn btn-default" type="button" (click)="resetForm(petForm)">
+    <i class="fa fa-repeat"></i>
+     Resetar</button>
+</div>
+</form>

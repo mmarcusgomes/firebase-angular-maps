@@ -1,0 +1,16 @@
+<h6 class="text-center">Registro de Eventos</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let event of eventList">
+      <td>{{event.servico}}</td>
+      <td>{{event.dataHora}}</td>
+      <td>{{event.emailUser}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(event)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(event.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

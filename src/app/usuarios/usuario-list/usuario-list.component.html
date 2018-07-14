@@ -1,0 +1,16 @@
+<h6 class="text-center">Registro de Usuários</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let usuario of usuarioList">
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.sobrenome}}</td>
+      <td>{{usuario.email}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(usuario)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(usuario.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

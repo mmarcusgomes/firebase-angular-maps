@@ -1,0 +1,24 @@
+<form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="usuarioService.selectedUsuario.$key">
+<div class="form-group">
+  <label>Nome</label>
+  <input class="form-control" name="nome" #name="ngModel" [(ngModel)]="usuarioService.selectedUsuario.nome" placeholder="nome" required>
+</div>
+<div class="form-group">
+  <label>Sobrenome</label>
+  <input class="form-control" name="sobrenome" #position="ngModel" [(ngModel)]="usuarioService.selectedUsuario.sobrenome" placeholder="sobrenome">
+</div>
+<div class="form-group">
+  <label>Email</label>
+  <input class="form-control" name="email" #office="ngModel" [(ngModel)]="usuarioService.selectedUsuario.email" placeholder="Email">
+</div>
+
+<div class="form-group text-center">
+  <button class="btn btn-primary" type="submit" [disabled]="!usuarioForm.valid">
+    <i class="fa fa-floppy-o"></i>
+     Salvar</button>
+  <button class="btn btn-default" type="button" (click)="resetForm(usuarioForm)">
+    <i class="fa fa-repeat"></i>
+     Resetar</button>
+</div>
+</form>
